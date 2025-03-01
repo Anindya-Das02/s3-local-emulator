@@ -1,0 +1,28 @@
+services:
+  localstack:
+    image: localstack/localstack:4.2
+    container_name: localstack
+    ports:
+      - "4566:4566"  # LocalStack default port
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+      - DEFAULT_REGION=us-east-1
+      - PERSISTENCE=1
+    volumes:
+      - "./localstack_data:/var/lib/localstack"
+    networks:
+      - localstack-network
+  s3-local:
+    image: s3-local-py
+    ports:
+      - "8773:8773"
+    networks:
+      - localstack-network
+    volumes:
+      - "./s3_downloads:/app/s3_downloads"
+    depends_on:
+      - localstack
+networks:
+  localstack-network:
+    driver: bridge
