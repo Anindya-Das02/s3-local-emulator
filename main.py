@@ -7,6 +7,7 @@ app = FastAPI(
     description="A lightweight, local AWS S3-compatible service powered by LocalStack. Perfect for testing and development, this emulator allows you to simulate S3 operations locally without connecting to the cloud. Test your code, debug workflows, and ensure seamless integration with AWS S3—all from your localmachine.",
     license_info={"name": "MIT License", "url": "https://opensource.org/licenses/MIT"},
     docs_url='/swagger',
+    version='1.0.0',
     openapi_tags=[
         {
             "name": "Health Check",

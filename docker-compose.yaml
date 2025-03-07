@@ -15,7 +15,7 @@ services:
     networks:
       - localstack-network
   s3-local:
-    image: s3-local-py
+    image: s3-local-py:latest
     ports:
       - "8773:8773"
     networks:
