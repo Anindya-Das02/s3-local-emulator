@@ -4,7 +4,10 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# workaround for SSLCertVerificationError, CERTIFICATE_VERIFY_FAILED error
+RUN pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 
 COPY main.py main.py
 COPY s3_downloads s3_downloads

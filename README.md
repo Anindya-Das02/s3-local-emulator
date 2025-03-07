@@ -14,7 +14,7 @@ Provides pre-built APIs to create, delete S3 Buckets/keys, upload & download fil
     docker-compose up -d
     ```
 3. Once the application starts running, you can access the swagger UI from [http://localhost:8773/swagger](http://localhost:8773/swagger)
-    ![Swagger UI](./assets/swagger.png)
+    ![Swagger UI](./readme/swagger.png)
 4. Terminate the container when no longer needed.
     ```sh
     docker-compose down

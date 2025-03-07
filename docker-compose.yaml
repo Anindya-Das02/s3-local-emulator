@@ -11,6 +11,7 @@ services:
       - PERSISTENCE=1
     volumes:
       - "./localstack_data:/var/lib/localstack"
+      - "./init/:/etc/localstack/init/ready.d/"
     networks:
       - localstack-network
   s3-local:
